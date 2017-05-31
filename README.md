@@ -9,7 +9,7 @@ To run:
 
 - Check if the java class can run in console:
 
-    `java io.specto.HoverflyTest`
+    `java io.specto.Middleware`
 
 - Using it in hoverfly
 

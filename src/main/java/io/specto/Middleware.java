@@ -2,7 +2,7 @@ package io.specto;
 
 import java.util.Scanner;
 
-public class HoverflyTest {
+public class Middleware {
 
     public static void main(String[] args)  {
         Scanner scanner = new Scanner(System.in);
