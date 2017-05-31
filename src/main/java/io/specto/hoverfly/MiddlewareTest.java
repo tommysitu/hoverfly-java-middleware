@@ -1,8 +1,8 @@
-package io.specto;
+package io.specto.hoverfly;
 
 import java.util.Scanner;
 
-public class Middleware {
+public class MiddlewareTest {
 
     public static void main(String[] args)  {
         Scanner scanner = new Scanner(System.in);

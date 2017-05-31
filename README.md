@@ -1,19 +1,29 @@
 
 Testing Hoverfly Java Middleware
 
-To run: 
 
-- Change to src directory
+Build
 
-    `cd src`
+- `./gradlew clean build`
+- copy `build/libs/hoverfly-java-middleware.jar` to `dist/`
 
-- Check if the java class can run in console:
 
-    `java io.specto.Middleware`
+Run 
 
-- Using it in hoverfly
+- Switch to dist directory
+
+    `cd dist`
+
+- Start hoverfly with the middleware
 
     `hoverctl start`
+    
     `hoverctl mode modify`
-    `hoverctl middleware --binary sh test.sh --script cat.json`
+    
+    `hoverctl middleware --binary sh run-jar.sh --script empty.json`
+    
+ 
+- The middleware modify the response, you can try it with
+    
+    `curl --proxy localhost:8500 http://time.jsontest.com`
 
