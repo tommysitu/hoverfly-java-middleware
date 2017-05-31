@@ -17,9 +17,12 @@ public class MiddlewareTest {
             String payload = scanner.nextLine();
             try {
                 JsonNode pairs = objectMapper.readTree(payload);
-                if (pairs.has("response")) {
+                if (pairs.has("response") && !pairs.get("response").get("headers").isNull()) {
                     ObjectNode responseNode = (ObjectNode) pairs.get("response");
-                    responseNode.put("body", "body was replaced by middleware\\n");
+                    responseNode.put("body", "body was replaced by middleware\n");
+
+                    ObjectNode headers = (ObjectNode) responseNode.get("headers");
+                    headers.remove("Content-Length");
                 }
                 System.out.print(objectMapper.writeValueAsString(pairs));
             } catch (Exception e) {
