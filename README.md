@@ -13,5 +13,7 @@ To run:
 
 - Using it in hoverfly
 
+    `hoverctl start`
+    `hoverctl mode modify`
     `hoverctl middleware --binary sh test.sh --script cat.json`
 
